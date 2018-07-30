@@ -1,6 +1,7 @@
 const el = document.getElementsByClassName("floating")[0]
 let timer = null;
 let scrollTimer = null;
+let executeFlag = false
 
 function slideUp(){
   clearTimeout(timer)
@@ -9,7 +10,7 @@ function slideUp(){
   if (currentHeight >= 1){
     let res = currentHeight - 1;
     el.style.height = res + "px";
-    slideUp_timer = setTimeout(() => {
+    timer = setTimeout(() => {
       slideUp(res)
     }, 1);
   } else {
@@ -21,9 +22,16 @@ function slideUp(){
 
 controlScroll = () => {
   clearTimeout( scrollTimer )
+  if( !executeFlag ) {
+    slideUp()
+    executeFlag = true
+  } else {
+    return
+  }
 	scrollTimer = setTimeout(() => {
-		slideUp()
-	}, 100 );
+    slideUp()
+    executeFlag = false
+	}, 1000 );
 }
 
 window.addEventListener( 'scroll', controlScroll, false )
