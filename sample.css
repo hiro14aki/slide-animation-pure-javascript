@@ -14,6 +14,7 @@ body {
 
 .floating {
   position: fixed;
+  top: 0px;
   height: 200px;
   width: 100%;
   background-color: white;
@@ -21,17 +22,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: max-height 1s;
+  transition: top 1s, height 1s;
 }
 
 .floating-close {
-  position: fixed;
-  max-height: 0px;
-  width: 100%;
-  background-color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
+  top: -50px;
+  height: 0px;
 }
