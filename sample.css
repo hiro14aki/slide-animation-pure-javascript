@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: slategray;
+  width: 100%;
+  height: 1000px;
+}
+
+.floating {
+  position: fixed;
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: max-height 1s;
+}
+
+.floating-close {
+  position: fixed;
+  max-height: 0px;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
